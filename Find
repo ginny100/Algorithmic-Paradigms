@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int find_index(int*, int, int);
+int find_element(int nums[], int number_to_search, int array_size)
+{
+  cout << "Number " << number_to_search << " is at index " << find_index(nums, number_to_search, array_size) << endl;
+}	
+
+int main()
+{
+	int number_to_search = 7; 
+	int array_size = 9;
+  int nums[] = {2, 4, 6, 3, 5, 7, 9, 1, 8};
+	find_element(nums, number_to_search, array_size);
+  return 0;
+}
+
+// takes an array of integers and an integer to find
+// returns index of element if exists otherwise -1
+int find_index(int array[], int to_find, int array_size) 
+{
+  // loop thru each element in the array
+  for(int i = 0; i < array_size; i++)
+  {
+    // check if this is the element you want to find
+    if (array[i] == to_find)
+    {
+      // if found return its index
+      return i;
+    }
+  }
+  return -1; // element not found, return -1
+}
+
+// DO NOT UNCOMMENT -- JUST FOR REFERENCE
+// array = [2, 4, 6, 3, 5, 7, 9, 1, 8] //
