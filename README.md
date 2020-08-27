@@ -1,2 +1,2 @@
 # Brute Force
-Linear Search
+Linear Search, Time complexity: O(n)
