@@ -1,0 +1,40 @@
+#include <iostream>
+#include <limits.h>
+using namespace std;
+
+int minimum_index(int*, int) ;
+int find_element(int nums[], int array_size)
+{
+  int minn = minimum_index(nums, array_size);
+  cout << "Maximum number in the array is " << nums[minn] << " at index " << minn << endl;
+}	
+
+int main()
+{
+	int array_size = 9;
+  int nums[] = {2, 4, 6, 3, 5, 7, 9, 1, 8};
+	find_element(nums, array_size);
+  return 0;
+}
+// takes an array and returns the index of minimum
+// number in that array
+int minimum_index(int array[], int array_size) 
+{
+  // initialize index to 0
+  int min_index = -1;
+  // set min value to the largest number
+  int min_val = INT_MAX;
+  // loop thru each element in array
+  for(int i=0; i<array_size; i++)
+  {
+    if (min_val > array[i]) 
+    {
+      min_val = array[i];
+      min_index = i;
+    }
+  }
+  return min_index;
+}
+
+// DO NOT UNCOMMENT -- JUST FOR REFERENCE
+// array = [2, 4, 6, 3, 5, 7, 9, 1, 8] //
